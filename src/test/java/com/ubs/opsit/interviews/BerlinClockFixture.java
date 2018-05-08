@@ -13,11 +13,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class BerlinClockFixture {
 
-    private TimeConverter berlinClock;
+    private TimeConverter berlinClock = null;
     private String theTime;
 
     @Test
     public void berlinClockAcceptanceTests() throws Exception {
+        berlinClock = new TimeConverterImpl();
         aBehaviouralTestRunner()
                 .usingStepsFrom(this)
                 .withStory("berlin-clock.story")
